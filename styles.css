@@ -8,14 +8,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;  /* centers the links horizontally */
-  gap: 10px;                /* space between them */
+  gap: 5px;                /* space between them */
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   color:purple;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   border: 5px solid palevioletred;
   border-radius: 15px;
-  padding: 10px;
+  padding: 5px;
   width: auto;
 }
 .headerstuff a:link,
@@ -47,8 +49,39 @@ body {
     border-left: 2px solid fuchsia;
     margin-left: 10px;
 }
+.textstuff2 {
+    font-size: 15px;
+    text-align: left;
+    background-color: black;
+    color: lavender;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 10px;
+    border-left: 2px solid mediumpurple;
+    margin-left: 10px;
+}
+.textstuff2 a:link, a:visited {
+    color:aqua;
+}
+.textstuff2 a:hover, a:active {
+    color:cornflowerblue;
+    border: 0px;
+    background-color: transparent;
+}
 .imagestuff {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-left: 10px;
     margin-left: 10px;
+}
+.largetextstuff {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: left;
+    background-color: black;
+    color: lavender;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 10px;
+    border-left: 2px solid aqua;
+    margin-left: 10px;
+    margin-top: -15px;
+    margin-bottom: -15px;
 }
