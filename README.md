@@ -1,2 +1,2 @@
 # website
-my actual website :3
+source code for https://emmie.pet/
