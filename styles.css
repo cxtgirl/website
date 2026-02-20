@@ -59,11 +59,13 @@ body {
     border-left: 2px solid mediumpurple;
     margin-left: 10px;
 }
-.textstuff2 a:link, a:visited {
+.textstuff2 a:link, a:visited,
+.textstuff a:link, a:visited {
     color:aqua;
 }
-.textstuff2 a:hover, a:active {
-    color:cornflowerblue;
+.textstuff2 a:hover, a:active,
+.textstuff a:hover, a:active {
+    color:aquamarine;
     border: 0px;
     background-color: transparent;
 }
