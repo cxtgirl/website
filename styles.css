@@ -7,8 +7,8 @@ body {
 .headerstuff {
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;  /* centers the links horizontally */
-  gap: 5px;                /* space between them */
+  justify-content: left;  
+  gap: 5px;                
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
@@ -42,7 +42,7 @@ body {
 .textstuff {
     font-size: 15px;
     text-align: left;
-    background-color: black;
+    background-color: transparent;
     color: lavender;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-left: 10px;
@@ -52,7 +52,7 @@ body {
 .textstuff2 {
     font-size: 15px;
     text-align: left;
-    background-color: black;
+    background-color: transparent;
     color: lavender;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-left: 10px;
@@ -78,7 +78,7 @@ body {
     font-weight: bold;
     font-size: 30px;
     text-align: left;
-    background-color: black;
+    background-color: transparent;
     color: lavender;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-left: 10px;
@@ -86,4 +86,21 @@ body {
     margin-left: 10px;
     margin-top: -15px;
     margin-bottom: -15px;
+}
+.linkimagestuff {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: -2px;
+}
+.linkimagestuff img {
+    margin-left: 5px;
+    margin-right: 5px;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    border: 2px solid plum;
 }
