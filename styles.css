@@ -4,6 +4,15 @@ html {
 body {
   background-color:black;
 }
+@font-face {
+   font-family: fonttest;
+   src: url(font/Cabin-VariableFont_wdth\,wght.ttf);
+}
+@font-face {
+   font-family: fonttest;
+   src: url(font/Cabin-Italic-VariableFont_wdth\,wght.ttf);
+   font-style: italic;
+}
 .headerstuff {
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +23,7 @@ body {
   margin-left: 10px;
   margin-right: 10px;
   color:purple;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'fonttest', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   border: 5px solid palevioletred;
   border-radius: 15px;
   padding: 5px;
@@ -22,7 +31,7 @@ body {
 }
 .headerstuff a:link,
 .headerstuff a:visited {
-  font-size: 20px;
+  font-size: 25px;
   display: inline-block;
   text-align: center;
   background-color: plum;
@@ -30,31 +39,39 @@ body {
   border: 2px solid plum;
   border-radius: 10px;
   text-decoration: none;
-  padding: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
   font-weight: bold;
+  transition: 0.15s;
+  transition-timing-function: ease-out;
 }
 
-.headerstuff a:hover, a:active {
+.headerstuff a:hover {
   border: 2px solid pink;
   background-color: pink;
   color: white;
+  transition: 0.15s;
+  transform: translateY(-2px);
+  transition-timing-function: ease-out;
 }
 .textstuff {
-    font-size: 15px;
+    font-size: 20px;
     text-align: left;
     background-color: transparent;
     color: lavender;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'fonttest', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-left: 10px;
     border-left: 2px solid fuchsia;
     margin-left: 10px;
 }
 .textstuff2 {
-    font-size: 15px;
+    font-size: 20px;
     text-align: left;
     background-color: transparent;
     color: lavender;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'fonttest', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-left: 10px;
     border-left: 2px solid mediumpurple;
     margin-left: 10px;
@@ -70,31 +87,40 @@ body {
     background-color: transparent;
 }
 .imagestuff {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding-left: 10px;
-    margin-left: 10px;
+    font-size: 15px;
+    text-align: center;
+    font-style: italic;
+    background-color: transparent;
+    color: lavender;
+    font-family: 'fonttest', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.imagestuff img {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: -10px;
 }
 .largetextstuff {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 50px;
     text-align: left;
     background-color: transparent;
     color: lavender;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'fonttest', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-left: 10px;
     border-left: 2px solid aqua;
     margin-left: 10px;
-    margin-top: -15px;
-    margin-bottom: -15px;
+    margin-top: -35px;
+    margin-bottom: -35px;
 }
 .linkimagestuff {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;  
-    font-size: 15px;
+    font-size: 20px;
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-bottom: -2px;
+    font-family: 'fonttest', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: -6px;
+    margin-bottom: -10px;
 }
 .linkimagestuff img {
     margin-left: 5px;
@@ -103,4 +129,24 @@ body {
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
     border: 2px solid plum;
+    transition: 0.2s;
+    transition-timing-function: ease-out;
+}
+.linkimagestuff img:hover {
+    margin-left: 5px;
+    margin-right: 5px;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    border: 2px solid aquamarine;
+    transition: 0.2s;
+    transform: scale(107%);
+    transition-timing-function: ease-out;
+}
+.photocaptionstuff {
+    font-size: 10px;
+    text-align: center;
+    background-color: transparent;
+    color: lavender;
+    font-family: 'fonttest', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
