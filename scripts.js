@@ -21,6 +21,9 @@ uhhhhhhh hi! basically I'm catgirl mrrow mrrp :3333
 }
 
 const coin2 = document.getElementById("coin");
+    if (coin2) {
+        coin2.addEventListener("click", gamble);
+    }
 let headcount = 0;
 let tailcount = 0;
 function gamble() {
@@ -38,8 +41,6 @@ function gamble() {
     <br>tails: ${tailcount}`
     
 }
-
-coin2.addEventListener("click", gamble);
 
 time();
 setInterval(time, 1000);
