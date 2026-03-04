@@ -26,40 +26,103 @@ uhhhhhhh hi! basically I'm catgirl mrrow mrrp :3333
 }
 
 const coin2 = document.getElementById("coin");
+const headbet = document.getElementById("betheads");
+const tailbet = document.getElementById("bettails");
 const coindisplay = document.getElementById("coinflip");
+const betdisplay = document.getElementById("bet");
 let headcount = 0;
 let tailcount = 0;
+let headbetstatus = true;
+let guesscount = 0;
+let totalcount = 0;
+let betpercentage = 0;
+let headpercent = 0;
+let tailpercent = 0;
 
 const ctx = document.getElementById('coinflipresults');
 let cc = null;
 
+if (headbet) {
+        headbet.addEventListener("click", heads);
+}
+
+function heads() {
+    headbetstatus = true;
+    betdisplay.innerHTML = `current bet: heads`;
+}
+
+if (tailbet) {
+        tailbet.addEventListener("click", tails);
+}
+function tails() {
+    headbetstatus = false;
+    betdisplay.innerHTML = `current bet: tails`;
+}
+
 if (ctx) {
     cc = new Chart(ctx, {
-        type: 'pie',
+        type: 'bar',
         data: {
-            datasets: [{
-                data: [headcount, tailcount],
-                backgroundColor: ['#3d5dff', '#3dffff'],
+            labels: [``],
+            datasets: [
+                {
+                data: [headpercent],
+                backgroundColor: ['#3d5dff'],
                 borderWidth: 0,
-                borderColor: 'transparent'
-            }]
+                borderColor: 'transparent',
+            },
+            {
+                data: [tailpercent],
+                backgroundColor: ['#3dffff'],
+                borderWidth: 0,
+                borderColor: 'transparent',
+            }
+        ]
         },
         options: {
-            responsive: true,
+            maintainAspectRatio: false,
+            indexAxis: `y`,
+            responsive: false,
             animation: true,
             events: [],
+            scales: {
+                x: {
+                    stacked: true,
+                    max: 100,
+                    ticks: {
+                        display:false,
+                    },
+                    grid: {
+                        display:false,
+                    },
+                    min: 0,
+                },
+                y: {
+                    stacked: true,
+                    ticks: {
+                        display:false,
+                    },
+                    grid: {
+                        display:false,
+                    },
+                    offset: false,
+                }
+            },
             plugins: {
                 legend: {
                     display: false
-                }
-            },
-            elements: {
-                arc: {
-                    borderWidth: 0
+                },
+                tooltip: {
+                    enabled: false
                 }
             },
             layout: {
-                padding: 0
+                padding: 0,
+            },
+            elements: {
+                bar: {
+                    barThickness: 50,
+                }
             }
         }
     });
@@ -71,17 +134,50 @@ if (coin2) {
 function gamble() {
     const result = Math.random() < 0.5 ? "heads" : "tails";
 
-    if (result === "heads") headcount++;
-    else tailcount++;
+    if (result === "heads") {
+        headcount++;
+        if (headbetstatus === true) {
+            guesscount++;
+        }
+    }
+    else {
+        tailcount++;
+         if (headbetstatus === false) {
+            guesscount++;
+        }
+    }
+    totalcount = tailcount + headcount;
+    tailpercent = (tailcount / totalcount) * 100;
+    headpercent = (headcount / totalcount) * 100;
+    const betpercentage = ((guesscount/totalcount)*100);
+    const displaypercentage = betpercentage.toFixed(1);
 
-    coindisplay.innerHTML = `
+    if (betpercentage < 45) {
+        coindisplay.innerHTML = `
 result: ${result}
-<br>heads: ${headcount}
-<br>tails: ${tailcount}
+<br>heads: ${headcount}, tails: ${tailcount}
+<br>correct guesses: ${guesscount}/${totalcount} (${displaypercentage}%)
+<br>wow u suck at gambling...
 `;
-
+    }
+    else if (betpercentage > 55) {
+        coindisplay.innerHTML = `
+result: ${result}
+<br>heads: ${headcount}, tails: ${tailcount}
+<br>correct guesses: ${guesscount}/${totalcount} (${displaypercentage}%)
+<br>waow u can gamble well!!!
+`;
+    }
+    else {
+        coindisplay.innerHTML = `
+result: ${result}
+<br>heads: ${headcount}, tails: ${tailcount}
+<br>correct guesses: ${guesscount}/${totalcount} (${displaypercentage}%)
+`;
+}
     if (cc) {
-        cc.data.datasets[0].data = [headcount, tailcount];
+        cc.data.datasets[0].data = [headpercent];
+        cc.data.datasets[1].data = [tailpercent];
         cc.update();
     }
 }
