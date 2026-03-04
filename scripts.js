@@ -1,3 +1,8 @@
+const timeElement = document.getElementById("time");
+if (timeElement) {
+    time();
+    setInterval(time, 1000);
+}
 function time() {
     const d = new Date();
 
@@ -21,26 +26,62 @@ uhhhhhhh hi! basically I'm catgirl mrrow mrrp :3333
 }
 
 const coin2 = document.getElementById("coin");
-    if (coin2) {
-        coin2.addEventListener("click", gamble);
-    }
+const coindisplay = document.getElementById("coinflip");
 let headcount = 0;
 let tailcount = 0;
-function gamble() {
-    const result = Math.floor(Math.random()*2);
-    let textresult;
-        if (result === 1) {
-            textresult = "heads";
-            headcount++;
-        } else {
-            textresult = "tails";
-            tailcount++;
+
+const ctx = document.getElementById('coinflipresults');
+let cc = null;
+
+if (ctx) {
+    cc = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [headcount, tailcount],
+                backgroundColor: ['#3d5dff', '#3dffff'],
+                borderWidth: 0,
+                borderColor: 'transparent'
+            }]
+        },
+        options: {
+            responsive: true,
+            animation: true,
+            events: [],
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            elements: {
+                arc: {
+                    borderWidth: 0
+                }
+            },
+            layout: {
+                padding: 0
+            }
         }
-    document.getElementById("coinflip").innerHTML = `result: ${textresult}
-    <br>heads: ${headcount}
-    <br>tails: ${tailcount}`
-    
+    });
 }
 
-time();
-setInterval(time, 1000);
+if (coin2) {
+        coin2.addEventListener("click", gamble);
+}
+function gamble() {
+    const result = Math.random() < 0.5 ? "heads" : "tails";
+
+    if (result === "heads") headcount++;
+    else tailcount++;
+
+    coindisplay.innerHTML = `
+result: ${result}
+<br>heads: ${headcount}
+<br>tails: ${tailcount}
+`;
+
+    if (cc) {
+        cc.data.datasets[0].data = [headcount, tailcount];
+        cc.update();
+    }
+}

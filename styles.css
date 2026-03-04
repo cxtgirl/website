@@ -150,3 +150,58 @@ body {
     color: lavender;
     font-family: 'fonttest', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.chartstuff canvas {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    height:250px; 
+    width:250px;
+}
+
+.chartstuff p {
+    font-size: 15px;
+    text-align: center;
+    font-style: italic;
+    background-color: transparent;
+    color: lavender;
+    font-family: 'fonttest', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.buttonstuff a {
+  font-family: 'fonttest', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 60px;
+  text-align: center;
+  display: block;
+  width: fit-content;
+  background-color: paleturquoise;
+  color: black;
+  border: 2px solid paleturquoise;
+  border-radius: 20px;
+  text-decoration: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  font-weight: bold;
+  transition: 0.15s;
+  transition-timing-function: ease-out;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.buttonstuff a:hover{
+  border: 2px solid palegreen;
+  background-color: palegreen;
+  color: white;
+  transition: 0.15s;
+  transition-timing-function: ease-out;
+}
